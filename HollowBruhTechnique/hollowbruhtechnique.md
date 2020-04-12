@@ -14,7 +14,7 @@ Zachęcam do modyfikowania i poprawiania tego buildu, ponieważ na pewno nie jes
 
 Jeśli masz jakieś pytania: można znaleźć mnie na [Facebooku](https://www.facebook.com/steelph0en1x), [YouTube](https://www.youtube.com/channel/UCNbZooiWSOeu28mmOLCgQ2w), [grupie facebookowej Path of Exile Polska](https://www.facebook.com/groups/1542862185952229/) i na Discordzie (SteelPh0enix#6969)
 
-Aktualna, najnowsza wersja guide'a będzie dostępna na moim dysku Google pod tym linkiem: https://drive.google.com/open?id=1_elc82m0mhSS6w4rP9tcSw0y8ccKmdtr
+Aktualna, najnowsza wersja guide'a będzie dostępna na moim Githubie pod tym linkiem: https://steelph0enix.github.io/PoEGuides/HollowBruhTechnique/hollowbruhtechnique.html
 
 **PRZECZYTAJ CAŁY GUIDE ZANIM ZACZNIESZ ZADAWAĆ PYTANIA**
 
