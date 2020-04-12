@@ -398,7 +398,7 @@ Nie ma tutaj dla nas za dużego wyboru, ale jeśli chcemy pograć pod Warcry, to
 
 ##### Small
 
-Tutaj możemy dopełnić swoje resisty lub HP. Ja preferuję small cluster z 4% increased maximum life i czterema node'ami, optymalnie z notablem Fettle (który jest dość rzadki), ale Peak Vigour, Feast of Flesh, Surging Vitality, Adrenaline lub Natural Vigour nie są złymi wyborami.
+Tutaj możemy dopełnić swoje resisty lub HP. Ja preferuję small cluster z 4% increased maximum life i trzema node'ami, optymalnie z notablem Fettle (który jest dość rzadki), ale Peak Vigour, Feast of Flesh, Surging Vitality, Adrenaline lub Natural Vigour nie są złymi wyborami.
 
 
 ### Flaski
