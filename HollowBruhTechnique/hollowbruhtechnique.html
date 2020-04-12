@@ -1,0 +1,798 @@
+<!DOCTYPE html><html><head>
+      <title>hollowbruhtechnique</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+.markdown-preview.markdown-preview {
+  left: 0 !important;
+  transform: none !important;
+  font-family: 'Fira Sans', sans-serif;
+  background-color: #222222;
+  color: #aaaaaa;
+  padding: 2em;
+}
+.markdown-preview.markdown-preview strong {
+  color: #bbbbbb;
+}
+.markdown-preview.markdown-preview .media-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.markdown-preview.markdown-preview h1,
+.markdown-preview.markdown-preview h2,
+.markdown-preview.markdown-preview h3,
+.markdown-preview.markdown-preview h4,
+.markdown-preview.markdown-preview h5,
+.markdown-preview.markdown-preview h6 {
+  color: #bbbbbb;
+}
+.markdown-preview.markdown-preview a {
+  color: #df6400;
+}
+.markdown-preview.markdown-preview footer {
+  font-size: 75%;
+}
+.markdown-preview.markdown-preview pre,
+.markdown-preview.markdown-preview code {
+  font-family: 'Fira Mono', monospace;
+  background-color: #363636;
+  color: #c5c5c5;
+}
+.markdown-preview.markdown-preview pre .punctuation,
+.markdown-preview.markdown-preview code .punctuation {
+  color: #e48f3f;
+}
+.markdown-preview.markdown-preview pre .operator,
+.markdown-preview.markdown-preview code .operator {
+  color: #ffc038;
+}
+.markdown-preview.markdown-preview pre .macro,
+.markdown-preview.markdown-preview code .macro,
+.markdown-preview.markdown-preview pre .directive,
+.markdown-preview.markdown-preview code .directive,
+.markdown-preview.markdown-preview pre .macro > .string,
+.markdown-preview.markdown-preview code .macro > .string {
+  color: #00b43c !important;
+}
+.markdown-preview.markdown-preview pre .function,
+.markdown-preview.markdown-preview code .function {
+  color: #ff6b58;
+}
+.markdown-preview.markdown-preview pre .keyword,
+.markdown-preview.markdown-preview code .keyword {
+  color: #e8eb56;
+}
+.markdown-preview.markdown-preview pre .string,
+.markdown-preview.markdown-preview code .string {
+  color: #64cce6;
+}
+p {
+  font-size: 100%;
+}
+.mume-header {
+  font-size: 200%;
+}
+html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview {
+  padding: 2em calc(50% - 1000px + 2em);
+}
+.green {
+  color: #008011;
+}
+.red {
+  color: #a10000;
+}
+.blue {
+  color: #355cdd;
+}
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header undefined" id="hollow-palm-technique-101-smite-raider">Hollow Palm Technique 101 - Smite Raider</h1>
+
+<p><em>by Wojciech Olech AKA SteelPh0enix</em></p>
+<center><img src="banner.jpg"></center>
+<h2 class="mume-header" id="wst%C4%99p">Wst&#x119;p</h2>
+
+<p>Witaj w moim poradniku. Postaram si&#x119; tutaj opisa&#x107; swoj&#x105; wersj&#x119; postaci opartej o keystone Hollow Palm Technique wprowadzony w patchu 3.10, kt&#xF3;ra jest stosunkowo tania do wystartowania, bardzo przyjemna w gameplayu oraz potrafi sobie poradzi&#x107; z wi&#x119;kszo&#x15B;ci&#x105; contentu.</p>
+<p>Poradnik jest skonstruowany w taki spos&#xF3;b, &#x17C;eby przedstawi&#x107; cykl &#x17C;ycia postaci, potrzebne przedmioty, mechaniki jakie wykorzystuj&#x119; i jakie mo&#x17C;na wykorzysta&#x107; z tym buildem oraz informacje pomocne w samodzielnym rozwoju postaci. B&#x119;d&#x119; r&#xF3;wnie&#x17C; umieszcza&#x142; hiper&#x142;&#x105;cza do podstron Wiki PoE na temat rzeczy kt&#xF3;re stosuj&#x119; w tym buildzie.</p>
+<p>Zach&#x119;cam do modyfikowania i poprawiania tego buildu, poniewa&#x17C; na pewno nie jest on idealny i wierz&#x119; ze z odpowiedni&#x105; ilo&#x15B;ci&#x105; czasu i inwestycjami mo&#x17C;na z niego wyci&#x105;gn&#x105;&#x107; znacznie wi&#x119;cej - zar&#xF3;wno pod wzgl&#x119;dem ofensywnym jak i defensywnym.</p>
+<p>Je&#x15B;li masz jakie&#x15B; pytania: mo&#x17C;na znale&#x17A;&#x107; mnie na <a href="https://www.facebook.com/steelph0en1x">Facebooku</a>, <a href="https://www.youtube.com/channel/UCNbZooiWSOeu28mmOLCgQ2w">YouTube</a>, <a href="https://www.facebook.com/groups/1542862185952229/">grupie facebookowej Path of Exile Polska</a> i na Discordzie (SteelPh0enix#6969)</p>
+<p>Aktualna, najnowsza wersja guide&apos;a b&#x119;dzie dost&#x119;pna na moim dysku Google pod tym linkiem: <a href="https://drive.google.com/open?id=1_elc82m0mhSS6w4rP9tcSw0y8ccKmdtr">https://drive.google.com/open?id=1_elc82m0mhSS6w4rP9tcSw0y8ccKmdtr</a></p>
+<p><strong>PRZECZYTAJ CA&#x141;Y GUIDE ZANIM ZACZNIESZ ZADAWA&#x106; PYTANIA</strong></p>
+<h2 class="mume-header undefined" id="spis-tre%C5%9Bci">Spis Tre&#x15B;ci</h2>
+
+<ul>
+<li><a href="#wst%C4%99p">Wst&#x119;p</a></li>
+<li><a href="#materia%C5%82y-video">Materia&#x142;y video</a></li>
+<li><a href="#path-of-building">Path of Building</a>
+<ul>
+<li><a href="#uwagi-dotycz%C4%85ce-pob-i-oblicze%C5%84">Uwagi dotycz&#x105;ce PoB i oblicze&#x144;</a></li>
+</ul>
+</li>
+<li><a href="#o-buildzie">O buildzie</a>
+<ul>
+<li><a href="#g%C5%82%C3%B3wne-mechaniki">G&#x142;&#xF3;wne mechaniki</a>
+<ul>
+<li><a href="#mechaniki-obronne">Mechaniki obronne</a></li>
+</ul>
+</li>
+<li><a href="#plusy-i-minusy">Plusy i minusy</a></li>
+<li><a href="#zrobiony-content-na-ten-moment">Zrobiony content na ten moment</a></li>
+<li><a href="#mody-na-mapach-kt%C3%B3rych-chcemy-unika%C4%87">Mody na mapach kt&#xF3;rych chcemy unika&#x107;</a></li>
+<li><a href="#opis-mechanik-buildu">Opis mechanik buildu</a>
+<ul>
+<li><a href="#hollow-palm-technique">Hollow Palm Technique</a></li>
+<li><a href="#smite">Smite</a></li>
+<li><a href="#raider-frenzy-charges">Raider + Frenzy Charges</a></li>
+<li><a href="#rampage">Rampage</a>
+<ul>
+<li><a href="#jak-%C5%82atwiej-triggerowa%C4%87-rampage">Jak &#x142;atwiej triggerowa&#x107; Rampage?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#tldr-how-to-play">TL;DR How to play</a></li>
+</ul>
+</li>
+<li><a href="#leveling">Leveling</a></li>
+<li><a href="#drzewko-skilli">Drzewko skilli</a></li>
+<li><a href="#ascendacy">Ascendacy</a></li>
+<li><a href="#skill-gem-setup">Skill gem setup</a>
+<ul>
+<li><a href="#smite-g%C5%82%C3%B3wny-6-link">Smite - g&#x142;&#xF3;wny 6-link</a></li>
+<li><a href="#aury">Aury</a></li>
+<li><a href="#movement-i-utility">Movement i utility</a></li>
+<li><a href="#opcjonalnie-je%C5%9Bli-mamy-unset-ringi">Opcjonalnie - je&#x15B;li mamy unset ringi</a></li>
+</ul>
+</li>
+<li><a href="#gearing">Gearing</a>
+<ul>
+<li><a href="#bronie">Bronie</a></li>
+<li><a href="#zbroja">Zbroja</a></li>
+<li><a href="#he%C5%82m">He&#x142;m</a></li>
+<li><a href="#buty">Buty</a></li>
+<li><a href="#amulet">Amulet</a></li>
+<li><a href="#pier%C5%9Bcienie">Pier&#x15B;cienie</a></li>
+<li><a href="#pasek">Pasek</a></li>
+<li><a href="#jewele">Jewele</a>
+<ul>
+<li><a href="#zwyk%C5%82e-jewele">Zwyk&#x142;e jewele</a></li>
+<li><a href="#abyss-jewele">Abyss jewele</a></li>
+<li><a href="#cluster-jewele">Cluster jewele</a>
+<ul>
+<li><a href="#large">Large</a></li>
+<li><a href="#medium">Medium</a></li>
+<li><a href="#small">Small</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#flaski">Flaski</a></li>
+</ul>
+</li>
+<li><a href="#co-dalej">Co dalej?</a></li>
+</ul>
+<h2 class="mume-header" id="materia%C5%82y-video">Materia&#x142;y video</h2>
+
+<p>W tej chwili jest ich ma&#x142;o, ale jestem w trakcie przygotowywania video guide dla buildu w kt&#xF3;rym zamieszcz&#x119; pe&#x142;ny showcase.</p>
+<p>Jedna z poprzednich iteracji buildu, Twinned T8 Beach z -max res, Legion i Beyond: <a href="https://www.youtube.com/watch?v=hxFnjV3tSdY">https://www.youtube.com/watch?v=hxFnjV3tSdY</a></p>
+<h2 class="mume-header" id="path-of-building">Path of Building</h2>
+
+<p>Aktualny Path of Building skonfigurowany pod single-target. ~5.1M DPS, ~3.2M Shaper DPS.<br>
+Pi&#x119;&#x107; drzewek skilli - 3 do levelowania, jedno aktualne (lvl92) i jedno finalne (lvl100).<br>
+<a href="https://pastebin.com/Si0Fhyhk">https://pastebin.com/Si0Fhyhk</a></p>
+<p><strong>Bardzo gor&#x105;co polecam instalacj&#x119; Path of Building Community Fork!: <a href="https://github.com/PathOfBuildingCommunity/PathOfBuilding/wiki/Installing-this-Fork">https://github.com/PathOfBuildingCommunity/PathOfBuilding/wiki/Installing-this-Fork</a></strong></p>
+<h3 class="mume-header" id="uwagi-dotycz%C4%85ce-pob-i-oblicze%C5%84">Uwagi dotycz&#x105;ce PoB i oblicze&#x144;</h3>
+
+<ul>
+<li>Elemental Exposure z Avatar of the Veil nie dzia&#x142;a - doda&#x142;em trzy mody &quot;Enemies Have #% To # Resistance&quot; w he&#x142;mie &#x17C;eby zasymulowa&#x107; ten efekt</li>
+<li>Domy&#x15B;lnie wybrane drzewko jest dla lvl92 - dost&#x119;pne s&#x105; cztery dodatkowe, dla lvl100 oraz trzy do levelowania</li>
+<li>Wszystkie warto&#x15B;ci podane tutaj aplikuj&#x105; si&#x119; do stanu mojej postaci na lvl92. Shaper DPS liczone s&#x105; z aktywnymi efektami kt&#xF3;re mo&#x17C;e ona sustainowa&#x107; w walce przeciwko bossowi (frenzy charges, phasing, fortify, blood stance), normalne - z efektami jakie mo&#x17C;na wyci&#x105;gn&#x105;&#x107; przy farmieniu (to co wcze&#x15B;niej + onslaught)</li>
+<li>Ekwipowanie The Dancing Dervish w PoB zalicza si&#x119; jako aktywowanie Manifest Dancing Dervish, wi&#x119;c posta&#x107; jest nadal traktowana jako unarmed + obliczenia pokazuj&#x105; stan przy aktywnym efekcie tego ostrza (bez Rampage, kt&#xF3;re trzeba ustawi&#x107; osobno), co implikuje aktywacj&#x119; Onslaught. &#x17B;eby sprawdzi&#x107; obra&#x17C;enia bez Onslaught, trzeba zdj&#x105;&#x107; ostrze z ekwipunku w PoB.</li>
+</ul>
+<h2 class="mume-header" id="o-buildzie">O buildzie</h2>
+
+<h3 class="mume-header" id="g%C5%82%C3%B3wne-mechaniki">G&#x142;&#xF3;wne mechaniki</h3>
+
+<p>Ten build opiera si&#x119; g&#x142;&#xF3;wnie na trzech rzeczach:</p>
+<ul>
+<li>Keystonie <a href="https://pathofexile.gamepedia.com/Hollow_Palm_Technique">Hollow Palm Technique</a>, kt&#xF3;ry mo&#x17C;na zdoby&#x107; za pomoc&#x105; jewela <a href="https://pathofexile.gamepedia.com/One_With_Nothing">One With Nothing</a></li>
+<li>Skillu <a href="https://pathofexile.gamepedia.com/Smite">Smite</a>, poniewa&#x17C; jest jednym z moich ulubionych skilli melee w grze i ma specyficzny spos&#xF3;b dzia&#x142;ania</li>
+<li>Ascendacy <a href="https://pathofexile.gamepedia.com/Raider">Raider</a> i <a href="https://pathofexile.gamepedia.com/Frenzy_charge">Frenzy Charges</a>, kt&#xF3;re pozwalaj&#x105; nam skalowa&#x107; nasz&#x105; szybko&#x15B;&#x107; i damage.</li>
+<li>opcjonalne Rampage kt&#xF3;re mo&#x17C;emy zdoby&#x107; dzi&#x119;ki <a href="https://pathofexile.gamepedia.com/The_Dancing_Dervish">The Dancing Dervish</a> lub <a href="https://pathofexile.gamepedia.com/The_Dancing_Duo">The Dancing Duo</a></li>
+</ul>
+<p>Oraz na kilku pomniejszych mechanikach kt&#xF3;re pozwalaj&#x105; nam uzyska&#x107; szybki i w miar&#x119; bezpieczny clear speed, nawet na wysokich tierach. Szczeg&#xF3;&#x142;y ni&#x17C;ej.</p>
+<h4 class="mume-header" id="mechaniki-obronne">Mechaniki obronne</h4>
+
+<ul>
+<li>Stackowanie Evasion i Armoura. In-combat w moim przypadku mam 38k evasion i ~9k armoura, co przek&#x142;ada si&#x119; na 70% evade chance i 43% physical damage reduction.</li>
+<li>Stackowanie HP oraz life leech - Vaal Pact pozwala mu dzia&#x142;a&#x107; znacznie szybciej, co u&#x142;atwia nam &#x17C;ycie. <strong>Sugeruj&#x119; zrobi&#x107; laby przed alokowaniem go, lub dealokowa&#x107; go na czas robienia ich - pu&#x142;apki bardzo bol&#x105; przy braku regeneracji</strong>.</li>
+<li>Fortify - zmniejsza otrzymywane przez nas obra&#x17C;enia o 20%, uptime powinien by&#x107; permanentny je&#x15B;li mamy 5- lub 6-linka dla Smite</li>
+<li>Phasing - z permanentnym uptimem pozwala na przenikanie przez przeciwnik&#xF3;w, wi&#x119;c nie istnieje opcja &#x17C;e nas zablokuj&#x105;, a dodatkowo dzi&#x119;ki Avatar of the Veil mamy immunity to elemental aliments, wi&#x119;c nie musimy si&#x119; martwi&#x107; o flaska z anty-freezem.</li>
+</ul>
+<h3 class="mume-header" id="plusy-i-minusy">Plusy i minusy</h3>
+
+<div class="green">+ Szybki clear speed</div>
+<div class="green">+ Do&#x15B;&#x107; tanio (~1-2ex) mo&#x17C;na wyci&#x105;gn&#x105;&#x107; sensowny damage</div>
+<div class="green">+ Jedyny unique item jaki jest wymagany to One With Nothing</div>
+<div class="green">+ Najszybszy leveling jakiego do&#x15B;wiadczy&#x142;em</div>
+<div class="green">+ Smite daje nam bezpieczny zasi&#x119;g ataku</div>
+<div class="red">- Nie jest to uber boss killer na bud&#x17C;ecie</div>
+<div class="red">- Nie daje rady facetankowa&#x107; boss&#xF3;w</div>
+<div class="red">- Ostateczna itemizacja bywa ci&#x119;&#x17C;ka (problemy z resistami oraz int/str)</div>
+<div class="red">- Mamy ma&#x142;o socket&#xF3;w, wi&#x119;c musimy dobrze dobiera&#x107; nasze gemy</div>
+<h3 class="mume-header" id="zrobiony-content-na-ten-moment">Zrobiony content na ten moment</h3>
+
+<ul>
+<li>Mapki do T16 w&#x142;&#x105;cznie, bez &quot;rippy&quot; mod&#xF3;w id&#x105; bez wi&#x119;kszych problem&#xF3;w, ale trzeba uwa&#x17C;a&#x107; na mechaniki boss&#xF3;w &#x17C;eby si&#x119; na nich nie wy&#x142;o&#x17C;y&#x107;. Testowane w paru przypadkach na double-beyond i monsters deal #% extra damage as #, dop&#xF3;ki si&#x119; nie zagapimy to czyszczenie i delirium nie jest problemem.</li>
+<li>Guardian of the Phoenix</li>
+<li>Veritania T15, pozostali Conquerorzy stoj&#x105; w kolejce do spawnu</li>
+<li>Simulacrum, zatrzyma&#x142;em si&#x119; na Wave 18 ze wzgl&#x119;du na Kosisa i jego pe&#x142;noekranow&#x105; fal&#x119; &#x15B;mierci (:--))))</li>
+</ul>
+<h3 class="mume-header" id="mody-na-mapach-kt%C3%B3rych-chcemy-unika%C4%87">Mody na mapach kt&#xF3;rych chcemy unika&#x107;</h3>
+
+<ul>
+<li><strong>Monsters reflect #% of Physical Damage</strong> oraz <strong>Monsters reflect #% of Elemental Damage</strong> to dla nas automatyczny zgon - Smite konwertuje 50% fizycznych obra&#x17C;e&#x144; na lightning, a Hatred daje % physical damage jako extra cold damage, wi&#x119;c oba mody nas zabijaj&#x105;.</li>
+<li><strong>Players cannot Regenerate Life, Mana or Energy Shield</strong> boli, ale jest do prze&#x17C;ycia</li>
+<li><strong>Monsters deal #% extra Physical Damage as #</strong> potrafi mocno zabole&#x107; kiedy boss nam przy&#x142;o&#x17C;y, ale dop&#xF3;ki jeste&#x15B;my w stanie unika&#x107; jego mechanik lub jeste&#x15B;my wystarczaj&#x105;co tanky, to ten mod nie powinien sprawia&#x107; problem&#xF3;w</li>
+</ul>
+<h3 class="mume-header" id="opis-mechanik-buildu">Opis mechanik buildu</h3>
+
+<h4 class="mume-header" id="hollow-palm-technique">Hollow Palm Technique</h4>
+
+<p>HPT to bardzo ciekawy keystone kt&#xF3;ry ma znacznie wi&#x119;kszy potencja&#x142; ni&#x17C; <a href="https://pathofexile.gamepedia.com/Facebreaker">Facebreakery</a>. W zamy&#x15B;le, ten keystone ogranicza nasz&#x105; posta&#x107; w zakresie ekwipunku, daj&#x105;c wzamian do&#x15B;&#x107; nieetyczn&#x105; ilo&#x15B;&#x107; obra&#x17C;e&#x144;.<br>
+<img src="hollow_palm.png" alt="hpt"></p>
+<p>W t&#x142;umaczeniu, dop&#xF3;ki jeste&#x15B;my <a href="https://pathofexile.gamepedia.com/Unencumbered">Unencumbeder</a>, to nasze ataki licz&#x105; si&#x119; jako dual wielding, mamy 60% <strong>wi&#x119;cej</strong> szybko&#x15B;ci ataku oraz 14-20 dodatkowego physical damage per 10 dexa.<br>
+Dla por&#xF3;wnania, troszk&#x119; matematyki: topowe 2-r&#x119;czne bronie s&#x105; w stanie da&#x107; 700+ pDPS (physical damage per second). 1-r&#x119;czne bronie mog&#x105; nam da&#x107; 400 pDPS, w po&#x142;&#x105;czeniu z bonusami od dual wielding to oko&#x142;o 520 pDPS per bro&#x144;.<br>
+DPS jest liczony nast&#x119;puj&#x105;cym wzorem: <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext>minDMG</mtext><mo>+</mo><mo stretchy="false">(</mo><mfrac><mrow><mtext>maxDMG</mtext><mo>&#x2212;</mo><mtext>minDMG</mtext></mrow><mn>2</mn></mfrac><mo stretchy="false">)</mo><mo>&#x22C5;</mo><mtext>attack&#xA0;speed</mtext></mrow><annotation encoding="application/x-tex">\text{minDMG} + (\frac{\text{maxDMG} - \text{minDMG}}{2}) \cdot \text{attack speed}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76666em;vertical-align:-0.08333em;"></span><span class="mord text"><span class="mord">minDMG</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mopen">(</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord mtight">maxDMG</span></span><span class="mbin mtight">&#x2212;</span><span class="mord text mtight"><span class="mord mtight">minDMG</span></span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord text"><span class="mord">attack&#xA0;speed</span></span></span></span></span>.<br>
+Bazowy unarmed attack speed to oko&#x142;o 1.2APS (attacks per second).<br>
+Bardzo &#x142;atwo nam w tym buildzie wyci&#x105;gn&#x105;&#x107; dexterity w granicach 500 bez &#x17C;adnej inwestycji, co daje nam 7000-10000 flat physical damage, czyli &#x15B;rednio 8500 pDMG z Hollow Palma. Nie wliczaj&#x105;c jeszcze bonusu od dual wielding.<br>
+Dodaj&#x105;c do tego zyskany attack speed, to nasz attack speed z samym hollow palmem oraz dual wielding (10% more od dual wielding + 60% more z HPT = 70% more attack speed) to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.2</mn><mo>&#x22C5;</mo><mn>1.7</mn><mo>=</mo><mn>2.04</mn></mrow><annotation encoding="application/x-tex">1.2 \cdot 1.7 = 2.04</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">7</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">.</span><span class="mord">0</span><span class="mord">4</span></span></span></span> APS</p>
+<p>Dorzucaj&#x105;c do pDPS bonus z DW (20% more attack physical damage), mamy finalnie <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10200</mn><mo>&#x22C5;</mo><mn>2.04</mn><mo>=</mo><mn>20808</mn></mrow><annotation encoding="application/x-tex">10200 \cdot 2.04 = 20808</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x22C5;</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">.</span><span class="mord">0</span><span class="mord">4</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mord">0</span><span class="mord">8</span><span class="mord">0</span><span class="mord">8</span></span></span></span> pDPS - bazowo, bez &#x17C;adnych dodatkowych bonus&#xF3;w ani zwi&#x119;ksze&#x144;. Z samym HPT i 500 dexterity. Znacznie wi&#x119;cej ni&#x17C; bazowe pDPS kt&#xF3;re mo&#x17C;emy dosta&#x107; z najlepszej broni w grze jak&#x105; mo&#x17C;na stworzy&#x107; na ten moment.</p>
+<p>Oczywi&#x15B;cie nie oznacza to &#x17C;e zwyk&#x142;e bronie s&#x105; useless i buildy z nimi s&#x105; kompletnie bez sensu, biorac pod uwag&#x119; istnienie tej pasywki - same bazowe obra&#x17C;enia to nie wszystko, skalowanie robi nam sporo roboty, a dzi&#x119;ki modom na broniach mo&#x17C;na uzyska&#x107; bardzo fajne efekty i potencjalnie wi&#x119;cej DPS, z odpowiednio du&#x17C;&#x105; ilo&#x15B;ci&#x105; currency jak&#x105; w&#x142;o&#x17C;ymy w bronie. Nie wspominaj&#x105;c o mechanikach i skillach kt&#xF3;rych nie mo&#x17C;emy zastosowa&#x107; b&#x119;d&#x105;c unencumbered. Mimo wszystko, taka ilo&#x15B;&#x107; bazowych obra&#x17C;e&#x144; daje nam du&#x17C;e pole do popisu w zakresie skalowania go, oraz pozwala skupi&#x107; si&#x119; na innych aspektach naszej postaci.</p>
+<h4 class="mume-header" id="smite">Smite</h4>
+
+<p><a href="https://pathofexile.gamepedia.com/Smite">Smite</a> to bardzo ciekawy, do&#x15B;&#x107; niszowy skill <em>pseudo-melee</em>.<br>
+<img src="smite.png" alt="smite"></p>
+<p>Jest to strike skill z ma&#x142;ym AoE kt&#xF3;rym mo&#x17C;emy atakowa&#x107; na bardzo du&#x17C;&#x105; (jak na melee) odleg&#x142;o&#x15B;&#x107;, kt&#xF3;ry daje nam aur&#x119; zwi&#x119;kszaj&#x105;c&#x105; obra&#x17C;enia i szans&#x119; na shock. Bardzo przyjemnie si&#x119; skaluje z added damage i konwertuje po&#x142;ow&#x119; obra&#x17C;e&#x144; na lightning.</p>
+<p>Zasi&#x119;g tego skilla jest g&#x142;&#xF3;wn&#x105; rzecz&#x105; za kt&#xF3;r&#x105; go lubi&#x119;. Pozwala z bezpiecznej odleg&#x142;o&#x15B;ci atakowa&#x107; przeciwnika, co r&#xF3;wnie&#x17C; umo&#x17C;liwia bardziej skuteczn&#x105; reakcj&#x119; na ataki i przyspiesza clear speed, szczeg&#xF3;lnie w po&#x142;&#x105;czeniu z Ancestral Call.</p>
+<p>W tym buildzie nie b&#x119;dziemy przejmowa&#x107; si&#x119; AoE (nawet w Blood Stance z Concentrated Effect jest on wystarczaj&#x105;co du&#x17C;y do szybkiego cleara), b&#x119;dziemy skalowa&#x107; tylko jego damage.</p>
+<h4 class="mume-header" id="raider-frenzy-charges">Raider + Frenzy Charges</h4>
+
+<p><a href="https://pathofexile.gamepedia.com/Frenzy_charge">Frenzy Charges</a> to jeden z trzech rodzaj&#xF3;w charge&apos;&#xF3;w dost&#x119;pnych w grze. Ka&#x17C;dy frenzy charge domy&#x15B;lnie daje nam</p>
+<ul>
+<li>4% increased attack speed</li>
+<li>4% increased cast speed</li>
+<li>4% <strong>more</strong> damage</li>
+</ul>
+<p>Domy&#x15B;lnie mo&#x17C;emy mie&#x107; max 3, ale w buildzie z samego drzewka jeste&#x15B;my w stanie zwi&#x119;kszy&#x107; ten limit do 7, co sumarycznie daje nam zwi&#x119;kszony o 21% attack speed, oraz o 21% wi&#x119;cej obra&#x17C;e&#x144; (cast speed nas nie interesuje bo nie u&#x17C;ywamy zakl&#x119;&#x107;). <strong>more</strong> damage jest tutaj bardzo przyjemnym dodatkiem, bo mno&#x17C;y to nasze obra&#x17C;enia razy 100+#%, zamiast zwi&#x119;ksza&#x107; je (co jest addytywne z innymi modyfikatorami &quot;increased damage&quot; i dzia&#x142;a troch&#x119; s&#x142;abiej) - wi&#x119;cej na ten temat mo&#x17C;na przeczyta&#x107; <a href="https://pathofexile.gamepedia.com/Stat#more_vs_increased">tutaj</a></p>
+<p>Na dodatek, pasywki Discipline of the Slaughter (drzewko) i Avatar of the Slaughter (ascendacy Raidera) i node&apos;y prowadz&#x105;ce do nich pozwalaj&#x105; nam wyskalowa&#x107; frenzy charges jeszcze mocniej, dzi&#x119;ki czemu ka&#x17C;dy frenzy charge daje nam</p>
+<ul>
+<li>5+4+8% = 17% increased evasion rating</li>
+<li>3+2 = 5% increased movement speed</li>
+<li>4+2+3 = 9% increased attack speed</li>
+<li>5+8 = 13% increased attack damage (5% inc damage i 8% inc attack damage)</li>
+<li>4% more damage</li>
+<li>4% increased cast speed</li>
+</ul>
+<p>Razy siedem, te statystyki to prawie po&#x142;owa naszych obra&#x17C;e&#x144;. Sustain jest bezproblemowy dzi&#x119;ki 25% szansy na zyskanie frenzy charge przy zab&#xF3;jstwie, oraz 20% szansy na zyskanie frenzy charge przy trafieniu unique/rare enemy w przypadku boss&#xF3;w - dzi&#x119;ki ascendacy Way of the Poacher i notable Discipline of the Slaughter.</p>
+<h4 class="mume-header" id="rampage">Rampage</h4>
+
+<p>To jest opcjonalny element buildu, poniewa&#x17C; trzeba przyzwyczai&#x107; si&#x119; do jego triggerowania, co bywa lekko uci&#x105;&#x17C;liwe.</p>
+<p>Istnieje taki item jak <a href="https://pathofexile.gamepedia.com/The_Dancing_Dervish">The Dancing Dervish</a>, oraz jego ulepszona, r&#xF3;&#x17C;ni&#x105;ca si&#x119; jednym szczeg&#xF3;&#x142;em, wersja - <a href="https://pathofexile.gamepedia.com/The_Dancing_Duo">The Dancing Duo</a>.</p>
+<p><img src="dervish.png" alt="dervish"></p>
+<p>Tak, jest to miecz. Technicznie, nie mo&#x17C;emy u&#x17C;ywa&#x107; &#x17C;adnych mieczy je&#x15B;li chcemy mie&#x107; bonus z Hollow Palm Technique, jednak ten konkretny miecz ma pewn&#x105; specyficzn&#x105; mechanik&#x119; powi&#x105;zan&#x105; z nim.</p>
+<p>W momencie w kt&#xF3;rym zabijemy kilku przeciwnik&#xF3;w za jego pomoc&#x105; (aczkolwiek s&#x105; pewne &quot;tricki&quot; kt&#xF3;re pozwalaj&#x105; to upro&#x15B;ci&#x107;), dzieje si&#x119; kilka rzeczy. Po pierwsze - w&#x142;&#x105;cza si&#x119; Rampage. Po drugie, zostaj&#x105; wy&#x142;&#x105;czone oba sloty na bro&#x144;. I po trzecie, uduchamia nam si&#x119; efekt <em>&quot;Manifest Dancing Dervish&quot;</em>.</p>
+<p><em>Manifest Dancing Dervish</em> to efekt kt&#xF3;ry tworzy miniona, kt&#xF3;ry pomaga nam atakuj&#x105;c przeciwnik&#xF3;w z u&#x17C;yciem Cyclone o ma&#x142;ym zasi&#x119;gu. Nie zadaje on znacz&#x105;cych obra&#x17C;e&#x144;, wi&#x119;c nie b&#x119;dziemy zajmowa&#x107; si&#x119; jego ulepszaniem (technicznie - gemy umieszczone w mieczu b&#x119;d&#x105; supportowa&#x107; tego miniona). Na dodatek, efekt ten daje nam Onslaught - kt&#xF3;ry i tak dostajemy z drzewka (i kt&#xF3;rego nie do ko&#x144;ca warto si&#x119; pozbywa&#x107; - czytaj dalej).</p>
+<p>Wy&#x142;&#x105;czenie obu slot&#xF3;w na bro&#x144; pozwala nam wykorzystywa&#x107; Hollow Palm Technique bez problem&#xF3;w. Jako ciekawostk&#x119;, dodam &#x17C;e <strong>mimo tego &#x17C;e weapon sloty s&#x105; wy&#x142;&#x105;czone, to gemy nadal si&#x119; leveluj&#x105; a inkubatory zyskuj&#x105; progress</strong>.</p>
+<p>Rampage to efekt kt&#xF3;ry nas najbardziej interesuje. W momencie go uzyskania, po lewej stronie ekranu pojawia si&#x119; licznik zab&#xF3;jstw (maksymalna ilo&#x15B;&#x107; jak&#x105; potrafi doliczy&#x107; to 1000). Co 20 zab&#xF3;jstw, dostajemy</p>
+<ul>
+<li>1% increased movement speed</li>
+<li>2% increased damage</li>
+</ul>
+<p>Wi&#x119;c, im wi&#x119;cej zab&#xF3;jstw, tym szybciej mo&#x17C;emy zabija&#x107; - przy 1000 stack&#xF3;w mamy 50% wincreased movement speed i 100% increased damage. Przek&#x142;ada si&#x119; to na zwi&#x119;kszenie naszych DPS z ~4.6M do ~5.3M (notka: increased =/= more, dlatego tylko do 5.3M a nie 9.2M. I podaj&#x119; tutaj normalne DPS, a nie shaper DPS).</p>
+<h5 class="mume-header" id="jak-%C5%82atwiej-triggerowa%C4%87-rampage">Jak &#x142;atwiej triggerowa&#x107; Rampage?</h5>
+
+<p>Istnieje pewien trick kt&#xF3;ry pozwala przyspieszy&#x107; ten proces. Mianowicie - wystarczy &#x17C;e zabijemy tylko jednego przeciwnika za pomoc&#x105; tego miecza, a potem swapniemy bronie na drugi set. Jeden kill &quot;striggeruje&quot; nam efekt, ale nie da rampage - do tego musimy zabi&#x107; kilku(nastu) przeciwnik&#xF3;w, jest to jednak znacznie &#x142;atwiejsze b&#x119;d&#x105;c unencumbered ni&#x17C; u&#x17C;ywaj&#x105;c tego miecza.</p>
+<p>Zab&#xF3;jstwa cz&#x142;onk&#xF3;w grupy, totem&#xF3;w i minion&#xF3;w r&#xF3;wnie&#x17C; si&#x119; licz&#x105; - mo&#x17C;na do tego u&#x17C;y&#x107; Ancestral Warchiefa</p>
+<p>Problem pojawia si&#x119; natomiast przy swapowaniu na drugi set - nie mo&#x17C;emy normalnie swapowa&#x107;, je&#x15B;li nie mamy niczego w drugim secie. Technicznie nie mo&#x17C;emy tam te&#x17C; niczego co mo&#x17C;emy mie&#x107; ekwipowane trzyma&#x107;, bo wtedy ca&#x142;&#x105; nasz&#x105; taktyk&#x119; szlag trafia i HPT nie dzia&#x142;a.</p>
+<p>Rozwi&#x105;zanie: <strong>w&#x142;o&#x17C;enie tam broni kt&#xF3;re b&#x119;d&#x105; mia&#x142;y zbyt wysokie requirements dla nas</strong>. Wtedy, mimo tego &#x17C;e b&#x119;d&#x105; w slocie, nie b&#x119;d&#x105; zaliczane jako &quot;za&#x142;o&#x17C;one&quot; i HPT b&#x119;dzie dzia&#x142;a&#x107;, a na dodatek b&#x119;dziemy mogli swapowa&#x107; bronie bez problemu i levelowa&#x107; w nich gemy.</p>
+<p>&#x17B;eby m&#xF3;c za&#x142;o&#x17C;y&#x107; takie bronie (polecam tutaj wandy, bo zazwyczaj b&#x119;d&#x105; wymaga&#x142;y wi&#x119;cej inta ni&#x17C; b&#x119;dziemy mieli na postaci), craftujemy sobie amulet z du&#x17C;&#x105; ilo&#x15B;ci&#x105; statystyki kt&#xF3;ra nas blokuje, opcjonalnie mo&#x17C;emy te&#x17C; respecowa&#x107; drzewko (prawie po drodze mamy notable kt&#xF3;ry daje 30 inta), zak&#x142;adamy wandy i cofamy zmiany.</p>
+<h3 class="mume-header" id="tldr-how-to-play">TL;DR How to play</h3>
+
+<ul>
+<li>Wchodzisz na mapk&#x119;</li>
+<li>Odpalasz buffy</li>
+<li>Zabijasz co najmniej jednego przeciwnika za pomoc&#x105; The Dancing Dervish/Duo</li>
+<li>Swapujesz bronie</li>
+<li>Przelatujesz przez mapk&#x119; na pe&#x142;nych buffach</li>
+<li>Powtarzasz</li>
+</ul>
+<h2 class="mume-header" id="leveling">Leveling</h2>
+
+<p>Do PoBa do&#x142;&#x105;czy&#x142;em trzy drzewka zwi&#x105;zane z levelowaniem buildu. Sugeruj&#x119; nimi pod&#x105;&#x17C;a&#x107;.</p>
+<p>Je&#x15B;li mo&#x17C;emy, najlepiej kupi&#x107; lvl1 20% quality Smite od kogo&#x15B;, mo&#x17C;emy go u&#x17C;ywa&#x107; od pocz&#x105;tku gry.</p>
+<p>W przypadku kiedy nie jeste&#x15B;my w stanie za&#x142;atwi&#x107; sobie Smite w ten spos&#xF3;b, polecam stworzy&#x107; now&#x105; posta&#x107; - Templara, zabi&#x107; za jego pomoc&#x105; Hillocka i wzi&#x105;&#x107; Smite jako nagrod&#x119; za misj&#x119;, a nast&#x119;pnie przenie&#x15B;&#x107; za pomoc&#x105; stasha na g&#x142;&#xF3;wn&#x105; posta&#x107;.</p>
+<p>Pomagamy Nessie, wype&#x142;niaj&#x105;c poboczn&#x105; misj&#x119; &quot;Mercy Mission&quot; - ta ze zdobyciem Medicine Chest na The Tidal Island, co pozwoli nam zdoby&#x107; Ancestral Call Support (nie dostaniemy go jako quest reward, trzeba go kupi&#x107;), kt&#xF3;ry znacz&#x105;co przyspieszy nasz leveling.</p>
+<p>Od razu po alokowaniu skrajnego jewel socketa, wsadzamy tam One With Nothing i alokujemy Hollow Palm Technique, pozbywaj&#x105;c si&#x119; broni i r&#x119;kawiczek.</p>
+<p>Supportujemy Smite gemami kt&#xF3;re daj&#x105; physical/elemental damage i attack speed, zgodnie z linkami (Ancestral Call to priorytet kt&#xF3;ry zawsze powinien by&#x107; podczas levelowania zlinkowany)</p>
+<p>Levelowanie z HPT jest bardzo szybkie i przyjemne, je&#x15B;li brakuje nam leveli pod koniec aktu 10 - polecam przej&#x15B;&#x107; si&#x119; do Delve.</p>
+<h2 class="mume-header" id="drzewko-skilli">Drzewko skilli</h2>
+
+<p>W drzewku kluczowymi elementami s&#x105;</p>
+<ul>
+<li>Dolny prawy skrajny jewel socket (obok Point Blank) - musimy gdzie&#x15B; wsadzi&#x107; nasz kluczowy jewel One With Nothing</li>
+<li>Frenzy charges - ze wzgl&#x119;du na to &#x17C;e je skalujemy, chcemy zebra&#x107; wszystkie node&apos;y +1. Dodatkowo, warto chwyci&#x107; Blood Drinkera, jewel socket i Cloth and Chain obok tych node&apos;&#xF3;w ze wzgledu na przydatne defensywne bonusy (hp/leech/res/evasion/jewel socket).</li>
+<li>Utmost Swiftness - daje zwi&#x119;kszone o 8% dexterity + 70 flat dex po drodze, daj&#x105;c mi oko&#x142;o 15% DPS na ten moment</li>
+<li>Disciple of the Slaughter i node&apos;y prowadz&#x105;ce do niego - opisa&#x142;em wy&#x17C;ej, skalowanie frenzy charges</li>
+</ul>
+<p>Po drodze &#x142;apiemy tyle node&apos;&#xF3;w HP ile jeste&#x15B;my w stanie. Bonusowo, zdecydowa&#x142;em si&#x119; na p&#xF3;j&#x15B;cie po pasywki Ambidexterity (obok skrajnego jewel socketa, zwi&#x119;ksza damage przy double wield) i Graceful Assault (zbuffowany Onslaught = wi&#x119;cej dmg + movement speed).</p>
+<p>Mocno sugeruj&#x119; zbiera&#x107; r&#xF3;wnie&#x17C; wszystkie okoliczne jewel sockety - w nich b&#x119;dziemy uzupe&#x142;nia&#x107; nasze resisty.</p>
+<p>Vaal Pact jest opcjonalny - jeszcze testuj&#x119; jego dzia&#x142;anie, ale na papierze wygl&#x105;da bardzo przyjemnie, nawet mimo tego &#x17C;e mamy sporo regeneracji &#x17C;ycia w drzewku i ekwipunku kt&#xF3;ra nam przez Vaal Pact znika.</p>
+<p>Pod Vaal Pactem nale&#x17C;y zaalokowa&#x107; punkcik pod mana leech, je&#x15B;li mamy problemy z sustainem many.</p>
+<h2 class="mume-header" id="ascendacy">Ascendacy</h2>
+
+<p>Alokujemy w podanej kolejno&#x15B;ci:</p>
+<ol>
+<li>Way of the Poacher - frenzy charges pozwol&#x105; nam szybciej levelowa&#x107;</li>
+<li>Avatar of the Slaughter - w mi&#x119;dzyczasie b&#x119;dziemy zbiera&#x107; na drzewku node&apos;y zwi&#x119;kszaj&#x105;ce ilo&#x15B;&#x107; frenzy charges, wi&#x119;c skalowanie nam jeszcze bardziej przyspieszy gr&#x119;</li>
+<li>Quartz Infusion - permanentny Phasing i zwi&#x119;kszone obra&#x17C;enia</li>
+<li>Avatar of the Veil - zwi&#x119;kszona szybko&#x15B;&#x107;, elemental exposure (przeciwnicy otrzymuje 15% wi&#x119;cej obra&#x17C;e&#x144; typu fire/cold/lightning) i movement speed</li>
+</ol>
+<h2 class="mume-header" id="skill-gem-setup">Skill gem setup</h2>
+
+<p>Mamy dost&#x119;pne trzy setupy - 6-link i 2 4-linki, wi&#x119;c trzeba je dobrze wykorzysta&#x107;.</p>
+<h3 class="mume-header" id="smite-g%C5%82%C3%B3wny-6-link">Smite - g&#x142;&#xF3;wny 6-link</h3>
+
+<p><b><span class="red">Smite</span> - <span class="red">Ancestral Call/Ruthless</span> - <span class="red">Multistrike</span> - <span class="red">Melee Physical Damage</span> - <span class="blue">Concentrated Effect</span> - <span class="red">Fortify</span></b></p>
+<p>Kolejno&#x15B;&#x107; linkowania oczywi&#x15B;cie nie ma tu znaczenia. <span class="red">Ancestral Call</span> zamieniamy na wiekszych bossach na <span class="red">Ruthless</span>, dla dodatkowych ~30% DPS.</p>
+<p>Je&#x15B;li nie mamy jeszcze 6-linka, dla 4-linka polecam setup <span class="red">Smite</span> - <span class="red">Ancestral Call/Ruthless</span> - <span class="red">Multistrike</span> - <span class="red">Melee Physical Damage</span>. Jako 5 link sugeruj&#x119; <span class="red">Fortify</span> je&#x15B;li chcemy troszk&#x119; wi&#x119;cej defensywy, lub <span class="blue">Concentrated Effect</span> je&#x15B;li chcemy wi&#x119;cej DPS.</p>
+<h3 class="mume-header" id="aury">Aury</h3>
+
+<p><b><span class="blue">Enlighten</span> - <span class="red">Blood and Sand</span> - <span class="red">Herald of Ash</span> - <span class="green">Hatred</span></b></p>
+<p><span class="red">Blood and Sand</span> daje nam sporego boosta do DPS lub AoE za marne 10% zarezerwowanej many.<br>
+<span class="red">Herald of Ash</span> daje 15% physical damage jako dodatkowy fire damage, a na dodatek zwi&#x119;ksza ten fire damage. Bonusowo daje on overkill damage wok&#xF3;&#x142; zabijanych przeciwnik&#xF3;w, kt&#xF3;ry zwi&#x119;ksza clear speed.<br>
+<span class="green">Hatred</span> daje nam 25% physical damage jako dodatkowy cold damage i zwi&#x119;ksza cold damage o 18% (na lvl20).</p>
+<p><em>#% physical damage gained as # damage</em> to kluczowy rodzaj moda dla nas, poniewa&#x17C; bior&#x105;c pod uwag&#x119; ilo&#x15B;&#x107; flat pDPS jak&#x105; mamy, to te mody najbardziej zwi&#x119;kszaj&#x105; nasz output damage.</p>
+<p><span class="blue">Enlighted</span> nie jest wymagane je&#x15B;li jeste&#x15B;my w stanie sustainowa&#x107; man&#x119;. Jest jednak bardzo pomocne w tej kwestii i ci&#x119;&#x17C;ko utrzyma&#x107; nam te trzy aury w&#x142;&#x105;czone bez niego nawet na lvl2.</p>
+<p>Je&#x15B;li nie mamy Enlighted i mamy problemy z man&#x105; - sugeruj&#x119; zrezygnowa&#x107; z Blood and Sand, trzyma&#x107; tylko do levelowania. Opcjonalnie, mo&#x17C;na annointowa&#x107; pasywk&#x119; z <em>reduced mana reservation</em> na drzewku.</p>
+<h3 class="mume-header" id="movement-i-utility">Movement i utility</h3>
+
+<p><b><span class="green">Dash</span> - <span class="green">Second Wind</span></b></p><b>
+<p><span class="red">Vaal Ancestral Warchief</span></p>
+</b><p><b><span class="green">Blood Rage</span></b></p>
+<p><span class="green">Dash</span> z <span class="green">Second Wind</span> to nasz g&#x142;&#xF3;wny skill do poruszania si&#x119;.<br>
+<span class="red">Ancestral Warchief</span> znacz&#x105;co zwi&#x119;ksza nasze obra&#x17C;enia, wersja Vaal jeszcze mocniej (zwyk&#x142;y Warchief o 18%, Vaal o 32%), a dodatkowo pomaga procowa&#x107; Rampage (bo jego kille r&#xF3;wnie&#x17C; si&#x119; licz&#x105;) i pomaga przy bossach.</p>
+<p><span class="green">Blood Rage</span> mo&#x17C;e zosta&#x107; zamieniony na <span class="red">Enduring Cry</span> (regeneracja HP i generowanie endurance charges) lub <span class="red">Rallying Cry</span> (wi&#x119;cej damage), je&#x15B;li we&#x17A;miemy pasywk&#x119; na drzewku &quot;Battle Cry&quot; i przypiszemy go do lewego przycisku mysz, co pozwoli nam go procowa&#x107; podczas chodzenia postaci&#x105;.</p>
+<p>W aktualnej mecie s&#x105; r&#xF3;wnie&#x17C; bardzo pot&#x119;&#x17C;ne medium cluster jewele pod Warcry, kt&#xF3;rych jeszcze nie testowa&#x142;em, ale podejrzewam &#x17C;e efekt mo&#x17C;e by&#x107; <strong>znacznie</strong> lepszy ni&#x17C; Blood Rage, dlatego gor&#x105;co zalecam eksperymentowanie.</p>
+<h3 class="mume-header" id="opcjonalnie-je%C5%9Bli-mamy-unset-ringi">Opcjonalnie - je&#x15B;li mamy unset ringi</h3>
+
+<p>Je&#x15B;li mamy unset ringi, to nie musimy zamienia&#x107; Blood Rage na Warcry, mo&#x17C;na Warcry wrzuci&#x107; w ring. Opcjonalnie dwa r&#xF3;&#x17C;ne do dw&#xF3;ch ring&#xF3;w, &#x17C;eby u&#x17C;ywa&#x107; ich sytuacyjnie.</p>
+<h2 class="mume-header" id="gearing">Gearing</h2>
+
+<h3 class="mume-header" id="bronie">Bronie</h3>
+
+<p>Wyja&#x15B;ni&#x142;em to wy&#x17C;ej, ale powt&#xF3;rz&#x119;.</p>
+<p>Generalnie - nie potrzebujemy &#x17C;adnych. Je&#x15B;li chcemy czy&#x15B;ci&#x107; mapy szybciej, to mo&#x17C;emy u&#x17C;y&#x107; <a href="https://pathofexile.gamepedia.com/The_Dancing_Dervish">The Dancing Dervish</a> lub <a href="https://pathofexile.gamepedia.com/The_Dancing_Duo">The Dancing Duo</a>. S&#x105; na prawd&#x119; bardzo tanimi broniami (swojego Dervisha kupi&#x142;em za 1alch), wi&#x119;c nie widz&#x119; powodu &#x17C;eby ich nie u&#x17C;ywa&#x107;, poza upierdliwo&#x15B;ci&#x105; triggerowania mechaniki.</p>
+<p>Wtedy, w off-handzie potrzebujemy broni z zbyt wysokimi requirements dla naszej postaci. Szczeg&#xF3;&#x142;owe instrukcje znajdziesz <a href="#rampage">wy&#x17C;ej</a>.</p>
+<h3 class="mume-header" id="zbroja">Zbroja</h3>
+
+<p>Na start - <a href="https://pathofexile.gamepedia.com/Tabula_Rasa">Tabula Rasa</a> to oczywisty wyb&#xF3;r</p>
+<p>Po tabuli, najsensowniejszy wyb&#xF3;r to rare Evasion/Armour-based 6-link</p>
+<p>Sensowny 6-link powinien mie&#x107; co najmniej ~100 flat HP i albo mo&#x17C;emy za jego pomoc&#x105; wype&#x142;ni&#x107; brakuj&#x105;ce resisty oraz statystyki, albo mo&#x17C;emy p&#xF3;j&#x15B;&#x107; krok dalej i poszuka&#x107;/craftowa&#x107; na nim kilka ofensywnych mod&#xF3;w.</p>
+<p>Defensywne mody:</p>
+<ul>
+<li>HP (flat/%)</li>
+<li>Resisty</li>
+<li>Evasion/armour</li>
+<li>Additional physical damage reduction</li>
+<li>Nearby enemies are blinded (Redeemer prefix)</li>
+<li>Reduced # damage taken (Delve)</li>
+</ul>
+<p>Ofensywne mody:</p>
+<ul>
+<li>flat dexterity</li>
+<li>#% increased dexterity (Redeemer/Elder suffix)</li>
+<li>+1 to Level of # Gems (Elder/Redeemer prefix - Support Gems, Warlord prefix - Active Skill Gems, Delve suffix - Strength Gems)</li>
+<li>Enemies you Kill Explode, dealing #% of their Life as Physical Damage (Crusader prefix)</li>
+</ul>
+<p>Szczerze m&#xF3;wi&#x105;c, nie znalaz&#x142;em &#x17C;adnych wartych uwagi unique alternatyw kt&#xF3;re by&#x142;y by lepsze od rare zbrojki. S&#x105; trzy typowe propozycje: Loreweave, Belly of the Beast i Wildwrap.</p>
+<ul>
+<li>Wildwrap - daje nam ogromn&#x105; ilo&#x15B;&#x107; DPS, ale niestety kolorowanie go pod nasz setup jest bardzo kosztowne, <a href="https://siveran.github.io/calc.html">Vorici Calculator</a> podpowiada mi &#x17C;e trzeba wyda&#x107; &#x15B;rednio 15k chromatic&#xF3;w &#x17C;eby trafi&#x107; w kombinacj&#x119; 5r1b</li>
+<li>Belly of the Beast - jeste&#x15B;my w stanie &#x142;atwo kupi&#x107;/wycraftowa&#x107; sobie 6-linka kt&#xF3;ry da nam wi&#x119;cej HP z prostego powodu - nie brakuje nam % increased HP, brakuje nam flat HP.</li>
+<li>Loreweave - bardzo &#x15B;rednia zbrojka w naszym przypadku, ujdzie i &#x142;atwo j&#x105; pokolorowa&#x107;, ale ma sens tylko je&#x15B;li jeste&#x15B;my w stanie zdoby&#x107; 6-linka tanio. Dobrze wyrollowany Loreweave b&#x119;dzie na r&#xF3;wni z bonusem damage jaki nam da flat dex na rare zbroi, ale b&#x119;dzie mie&#x107; znacznie mniej HP.</li>
+</ul>
+<h3 class="mume-header" id="he%C5%82m">He&#x142;m</h3>
+
+<ul>
+<li>
+<p><a href="https://pathofexile.gamepedia.com/Devoto%27s_Devotion">Devoto&apos;s Devotion</a> - prawdopodobnie najlepsza opcja dps-wise. Bardzo &#x142;adnie wpasowuje si&#x119; w build i w tej lidze jest bardzo tani (5c+)</p>
+</li>
+<li>
+<p><a href="https://pathofexile.gamepedia.com/Starkonja%27s_Head">Starkonja&apos;s Head</a> - troch&#x119; bardziej defensywny, ale r&#xF3;wnie&#x17C; bardzo tani unique helmet.</p>
+</li>
+<li>
+<p>Rare evasion/armour helmet - Je&#x15B;li potrzebujemy wi&#x119;cej defensyw i miejsca na rezystancje, kosztem DPS.</p>
+</li>
+</ul>
+<h3 class="mume-header" id="buty">Buty</h3>
+
+<ul>
+<li><a href="https://pathofexile.gamepedia.com/Garukhan%27s_Flight">Garukhan&apos;s Flight</a> - te buty s&#x105; nam w stanie da&#x107; &#x142;&#x105;cznie ~600HP (po zwi&#x119;kszeniach) dzi&#x119;ki pasywce kt&#xF3;ra daje 2HP per 10dex. Dodatkowo maj&#x105; ogromn&#x105; ilo&#x15B;&#x107; evasion rating, 30% movement speeda i flat dexterity. Je&#x15B;li nie mamy alokowanego vaal pactu, to regen r&#xF3;wnie&#x17C; jest przyjemnym dodatkiem do defensywy. Wad&#x105; jest to, &#x17C;e nie s&#x105; tanie - 2.5ex+ w momencie pisania guide&apos;a.</li>
+</ul>
+<p>Zanim nas b&#x119;dzie na nie sta&#x107;, to polecam kupi&#x107; jakie&#x15B; butki z du&#x17C;&#x105; ilo&#x15B;ci&#x105; HP i dexterity, oraz opcjonalnie tymczasowymi resistami kt&#xF3;re potem zape&#x142;nimy w reszcie ekwipunku, przed kupnem Garukhan&#xF3;w.</p>
+<h3 class="mume-header" id="amulet">Amulet</h3>
+
+<ul>
+<li>Rare amulet. Najlepiej Jade. Mody kt&#xF3;re nas najbardziej w nim interesuj&#x105; to
+<ul>
+<li>flat dexterity (optymalnie &#x142;&#x105;cznie 100+ z catalystami)</li>
+<li>#% increased dexterity (redeemer mod)</li>
+<li>HP</li>
+<li>Gain #% of Physical Damage as Extra # Damage (ogromny boost do obra&#x17C;e&#x144;)</li>
+<li>1% Increased Damage per 15 Dexterity (troch&#x119; mniejszy boost do obra&#x17C;e&#x144;)</li>
+</ul>
+</li>
+</ul>
+<p>Taki amulecik nale&#x17C;y potraktowa&#x107; <a href="https://pathofexile.gamepedia.com/Intrinsic_Catalyst">Intrinsic Catalystami</a> &#x17C;eby zwi&#x119;kszy&#x107; ilo&#x15B;&#x107; dexterity.</p>
+<p><strong>Annointy</strong>:</p>
+<ul>
+<li>Divine Wrath/Divine Fury/Divine Judgement - znajduj&#x105; sie po lewej stronie drzewka, niedaleko startu Templara. Najlepsze annointy pod wzgl&#x119;dem op&#x142;acalno&#x15B;ci.</li>
+<li>Master of Force - dro&#x17C;szy od wy&#x17C;ej wymienionych, ale daje wi&#x119;cej DPS</li>
+<li><strong>Tenacity</strong> - best in slot, bior&#x105;c pod uwag&#x119; &#x17C;e chcemy stackowa&#x107; tyle %increased hp ile si&#x119; da, to Transfiguration of Body daje nam ca&#x142;kiem spor&#x105; ilo&#x15B;&#x107; obra&#x17C;e&#x144;. <strong>Transfiguration of Body</strong> powoduje &#x17C;e 30% warto&#x15B;ci #% increased maximum Life aplikuje si&#x119; do Attack Damage. Czyli, je&#x15B;li mamy 100% increased maximum Life, to zyskujemy r&#xF3;wnie&#x17C; 30% increased Attack Damage. W tym buildzie jeste&#x15B;my w stanie bez ogromnego wysi&#x142;ku dobi&#x107; do ~200% increased HP, co daje nam oko&#x142;o 60% increased Attack Damage.</li>
+</ul>
+<p>Alternatywnie - mo&#x17C;emy kupi&#x107; <a href="https://pathofexile.gamepedia.com/Rigwald%27s_Curse">Rigwald&apos;s Curse</a> i przerobi&#x107; nasz build pod crit-based, ale to material na osobny build guide.</p>
+<h3 class="mume-header" id="pier%C5%9Bcienie">Pier&#x15B;cienie</h3>
+
+<ul>
+<li>Rare ringi z
+<ul>
+<li>HP</li>
+<li>Resistami</li>
+<li>flat dexterity</li>
+<li>brakuj&#x105;cymi statystykami (str/int)</li>
+</ul>
+</li>
+</ul>
+<p>GG ringi mog&#x105; r&#xF3;wnie&#x17C; mie&#x107; flat physical damage added, attack speed, Vulnerability on hit (Warlord suffix), #% increased Melee Damage (elder suffix). Je&#x15B;li trafi nam si&#x119; mana leech, to mo&#x17C;emy zignorowa&#x107; ma&#x142;ego node&apos;a pod mana leech na drzewku (pod Vaal Pactem)</p>
+<h3 class="mume-header" id="pasek">Pasek</h3>
+
+<ul>
+<li>Rare stygian vise z
+<ul>
+<li>HP</li>
+<li>resistami</li>
+</ul>
+</li>
+</ul>
+<p>GG pasek mo&#x17C;e r&#xF3;wnie&#x17C; mie&#x107; increased Global Physical Damage (delve/elder prefix), increased Melee Damage (delve prefix), increased attributes (elder suffix). Je&#x15B;li chcemy stworzy&#x107; samodzielnie GG pasek na bud&#x17C;ecie, to nie ma co liczy&#x107; na elder stygian vise (baza jest bardzo droga), polecam elderowy leather belt.</p>
+<h3 class="mume-header" id="jewele">Jewele</h3>
+
+<h4 class="mume-header" id="zwyk%C5%82e-jewele">Zwyk&#x142;e jewele</h4>
+
+<p>Interesuj&#x105; nas w nich g&#x142;&#xF3;wnie</p>
+<ul>
+<li>#% increased maximum HP</li>
+<li>resisty (~30% per jewel)</li>
+<li>Dexterity</li>
+<li>increased melee damage</li>
+<li>increased attack damage while dual wielding</li>
+<li>increased global physical damage</li>
+</ul>
+<p>Dla bogatych: Watcher&apos;s Eye z modami pod Hatred (increased cold damage/damage penetration/flat cold/physical damage conversion)</p>
+<h4 class="mume-header" id="abyss-jewele">Abyss jewele</h4>
+
+<p>Tutaj chcemy trafi&#x107; w</p>
+<ul>
+<li>+HP</li>
+<li>Dexterity</li>
+<li>resisty</li>
+<li>#% chance to gain Unholy Might on Melee Kill (gain 30% of Physical Damage as Extra Chaos Damage)</li>
+<li>#% chance to Blind Enemies on Hit</li>
+</ul>
+<h4 class="mume-header" id="cluster-jewele">Cluster jewele</h4>
+
+<p>Mamy do dyspozycji jeden skrajny socket, wi&#x119;c mo&#x17C;emy si&#x119; troch&#x119; pobawi&#x107;</p>
+<h5 class="mume-header" id="large">Large</h5>
+
+<p>Tutaj koniecznie chcemy mie&#x107; baz&#x119; o ilvl 75+, ze wzgledu na mo&#x17C;liwo&#x15B;&#x107; trafienia dw&#xF3;ch jewel socket&#xF3;w.</p>
+<p>Mody na bazie jakie nas interesuj&#x105; to</p>
+<ul>
+<li>12% increased Attack Damage while Dual Wielding</li>
+<li>12% increased Physical Damage</li>
+</ul>
+<p>Najbardziej u&#x17C;yteczne notable pod wzgl&#x119;dem DPS dla nas to Force Multiplie, Iron Breaker i Grim Oath. Dla QoL mo&#x17C;na pokusi&#x107; si&#x119; o Devastator (eksplozje = szybszy i bezpieczniejszy clear), Feed The Fury lub Fuel The Fight.</p>
+<h5 class="mume-header" id="medium">Medium</h5>
+
+<p>Nie ma tutaj dla nas za du&#x17C;ego wyboru, ale je&#x15B;li chcemy pogra&#x107; pod Warcry, to wtedy bierzemy 15% increased Warcry Buff Effect i mo&#x17C;emy pobawi&#x107; si&#x119; z notablami Mob Mentality i Cry Wolf, lub opcjonalnie Haunting Shout.</p>
+<h5 class="mume-header" id="small">Small</h5>
+
+<p>Tutaj mo&#x17C;emy dope&#x142;ni&#x107; swoje resisty lub HP. Ja preferuj&#x119; small cluster z 4% increased maximum life i czterema node&apos;ami, optymalnie z notablem Fettle (kt&#xF3;ry jest do&#x15B;&#x107; rzadki), ale Peak Vigour, Feast of Flesh, Surging Vitality, Adrenaline lub Natural Vigour nie s&#x105; z&#x142;ymi wyborami.</p>
+<h3 class="mume-header" id="flaski">Flaski</h3>
+
+<ul>
+<li>Divine Flask z instant recovery to absolutny must-have. Docelowo powinni&#x15B;my celowa&#x107; w instant recovery + removes bleeding on use (suffiks &quot;of Stauching&quot;).</li>
+<li>Lion&apos;s Roar - knockback + ogromna ilo&#x15B;&#x107; armoura i obra&#x17C;e&#x144;, nie jest r&#xF3;wnie&#x17C; drogi w tej chwili  (5c+)</li>
+<li>Atziri&apos;s Promise - sporo DPS + leech + chaos resistance, tania i &#x142;atwa do wyfarmienia na zwyk&#x142;ej Atziri. Nie ma powodu &#x17C;eby jej nie u&#x17C;ywa&#x107;.</li>
+<li>Quicksilver flask, najlepiej z &quot;increased duration/increased movement speed during flask effect&quot;</li>
+</ul>
+<p>Ostatni flask dowolny, ale koniecznie z &quot;Removes Curses on use&quot; (suffiks &quot;of Warding&quot;). Ja u&#x17C;ywam Jade Flaska, bo daje ca&#x142;kiem fajn&#x105; ilo&#x15B;&#x107; evasion.</p>
+<p><strong>PSA: suffiksy z immunity mo&#x17C;na craftowa&#x107; u Einhara, recepta jest dost&#x119;pna od pocz&#x105;tku i kosztuje 4 dowolne rare bestie</strong></p>
+<h2 class="mume-header" id="co-dalej">Co dalej?</h2>
+
+<p>Dalszy rozw&#xF3;j tego builda planuj&#x119; na dwa sposoby.</p>
+<ol>
+<li>Prawdopodobnie spr&#xF3;buj&#x119; pobawi&#x107; si&#x119; z zast&#x105;pieniem Blood Rage&apos;a poprzez Enduring Cry, pozb&#x119;d&#x119; si&#x119; wtedy Vaal Pactu. Kilka procent dodatkowego physical damage reduction i spory life regen, oraz efekty z cluster jeweli dzia&#x142;aj&#x105; bardzo przyjemnie u Mathila.</li>
+<li>Zauwa&#x17C;y&#x142;em &#x17C;e zmiana Ascendacy z pasywek pod Phasing, na pasywki pod Onslaught capuje mi evade chance (95%). Obra&#x17C;enia powinny wygl&#x105;da&#x107; podobnie (potencjalnie troszk&#x119; gorzej ze wzgl&#x119;du na to ze Exposure mimo wszystko bardzo mocno pomaga na bossach), ale potencja&#x142; defensywny jest za du&#x17C;y &#x17C;eby to zignorowa&#x107;. B&#x119;d&#x119; z tym eksperymentowa&#x142;.</li>
+</ol>
+<p>Dzi&#x119;kuj&#x119; za uwag&#x119; i &#x17C;ycz&#x119; mi&#x142;ej zabawy &#x1F609;</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
